@@ -8,19 +8,19 @@ function getCurrencyQuote(currency, callback){
 
 
 function updateConversor(){
-  var from_currency = 'USD';
-  var from_amount = 12;
-  var to_currency = 'TRX';
+  var from_currency = $('#from').val();
+  var from_amount = parseFloat($('#amount-from').val());
+  var to_currency = $('#to').val();
 
   if(from_currency === 'USD'){
     getCurrencyQuote(to_currency, function(response){
       var quote = (from_amount / parseFloat(response['price']));
+      $('#result').attr('value', `${to_currency} ${quote}`);
       console.log(to_currency, quote);
     });
   };
 };
 
 
-// function convertCurrency(from_currency, from_amount, to_currency){
-  
-// };
+
+$("#from, #to, #amount-from").on("change", updateConversor);
