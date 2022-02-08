@@ -8,9 +8,9 @@ function getCurrencyQuote(currency, callback){
 
 
 function updateConversor(){
-  from_currency = 'USD';
-  from_amount = 12;
-  to_currency = 'TRX';
+  var from_currency = 'USD';
+  var from_amount = 12;
+  var to_currency = 'TRX';
 
   if(from_currency === 'USD'){
     getCurrencyQuote(to_currency, function(response){
