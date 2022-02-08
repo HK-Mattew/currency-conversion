@@ -15,11 +15,14 @@ function updateConversor(){
   if(!from_currency | !from_amount | !to_currency){
     return;
   };
+  
+  $('#div-result').attr('style', 'display:none;');
 
   if(from_currency === 'USD'){
     getCurrencyQuote(to_currency, function(response){
       var quote = (from_amount / parseFloat(response['price']));
-      $('#result').attr('value', `${to_currency} ${quote}`);
+      $('#result').attr('value', `${quote} ${to_currency} `);
+      $('#div-result').removeAttr('style');
       console.log(to_currency, quote);
     });
   };
