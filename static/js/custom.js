@@ -1,20 +1,25 @@
-function getCurrencyQuote(currency){
-  return $.ajax({
-      url: `https://api.binance.com/api/v3/avgPrice?symbol=${currency}USDT`
+function getCurrencyQuote(currency, callback){
+  $.ajax({
+      url: `https://api.binance.com/api/v3/avgPrice?symbol=${currency}USDT`,
+      success: callback
     });
 };
 
 
-function convertUsdToCrypto(usd, to_currency){
-  getCurrencyQuote(to_currency).then( response => {
-    return alert(usd / parseFloat(response['price']));
-  });
+
+function updateConversor(){
+  from_currency = 'USD';
+  from_amount = 12;
+  to_currency = 'TRX';
+
+  if(from_currency === 'USD'){
+    getCurrencyQuote(to_currency, function(response){
+      var quote = (from_amount / parseFloat(response['price']);
+      console.log(to_currency, quote);
+    });
+  };
 };
 
-
-function convertCryptoToUsd(crypto_amount, crypto_currency){
-  return (crypto_amount * getCurrencyQuote(crypto_currency))
-};
 
 // function convertCurrency(from_currency, from_amount, to_currency){
   
