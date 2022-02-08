@@ -3,7 +3,7 @@ function getCurrencyQuote(currency){
   $.ajax({
       url: `https://api.binance.com/api/v3/avgPrice?symbol=${currency}USDT`,
       success: function(result){
-        quote = result['price'];
+        quote = parseFloat(result['price']);
       }
     });
   return quote;
