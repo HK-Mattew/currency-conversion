@@ -36,26 +36,33 @@
 
   </head>
   <body>
-    <a id="skip-to-content" href="#content">Skip to the content.</a>
-
-    <header class="page-header" role="banner">
-      <h1 class="project-name">Currency conversion</h1>
-      <h2 class="project-tagline"></h2>
-      
-        <a href="https://github.com/HK-Mattew/currency-conversion" class="btn">View on GitHub</a>
-      
-      
-    </header>
-
     <main id="content" class="main-content" role="main">
-      <div id="cotacao">
-        <span class="cotMoeda estrangeira">
-          <span class="symbol">US$</span>
-          <input type="text" id="estrangeiro" value="1,00" style="width: 2.3em;"></span>
-          <span class="optional"> vale </span><span class="cotMoeda nacional">
-          <span class="symbol">R$</span><input type="text" id="nacional" value="5,27" style="width: 2.3em;"></span>
-          <span class="optional"> hoje</span><br class="clearfix">
-      </div>
+      <form style="text-align:center;">
+          <legend>Currency Conversion</legend>
+          <div class="mb-3">
+            <label for="from" class="form-label">From</label>
+            <select class="form-select" id="from" aria-label="Default select example">
+                <option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+             </select>
+          </div>
+          <div class="mb-3">
+            <label for="to" class="form-label">To</label>
+            <select class="form-select" id="to" aria-label="Default select example">
+                <option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+             </select>
+          </div>
+          <div class="mb-3">
+            <label for="result" class="form-label">Today</label>
+            <input type="text" id="result" class="form-control" placeholder="Disabled input">
+          </div>
+        </form>
+        
 
       <footer class="site-footer">
         
