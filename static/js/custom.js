@@ -14,7 +14,7 @@ function updateConversor(){
 
   if(from_currency === 'USD'){
     getCurrencyQuote(to_currency, function(response){
-      var quote = (from_amount / parseFloat(response['price']);
+      var quote = (from_amount / parseFloat(response['price']));
       console.log(to_currency, quote);
     });
   };
