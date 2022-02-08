@@ -11,6 +11,10 @@ function updateConversor(){
   var from_currency = $('#from').val();
   var from_amount = parseFloat($('#amount-from').val());
   var to_currency = $('#to').val();
+  
+  if(!from_currency | !from_amount | !to_currency){
+    return;
+  };
 
   if(from_currency === 'USD'){
     getCurrencyQuote(to_currency, function(response){
