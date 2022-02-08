@@ -40,7 +40,7 @@
   </head>
   <body>
     <main id="content" class="main-content" role="main">
-      <form style="text-align:center;">
+      <form style="text-align: center;max-width: 350px;margin-left: auto;margin-right: auto;margin-top: 3em;">
           <legend>Currency Conversion</legend>
           <div class="mb-3">
             <label for="from" class="form-label">From</label>
@@ -61,8 +61,12 @@
              </select>
           </div>
           <div class="mb-3">
+            <label for="amount-from" class="form-label">Amount From</label>
+            <input type="text" id="amount-from" class="form-control" placeholder="">
+          </div>
+          <div class="mb-3">
             <label for="result" class="form-label">Today</label>
-            <input type="text" id="result" class="form-control" placeholder="Disabled input">
+            <input type="text" id="result" class="form-control" placeholder="" readonly>
           </div>
         </form>
         
